@@ -14,4 +14,9 @@ class Emergency extends Model
     {
         $this->belongsTo('App\SuratJalan', 'surat_jalan_id', 'id');
     }
+
+    public function emergencyType()
+    {
+        $this->belongsTo('App\EmergencyMaster', 'emergency_id', 'id');
+    }
 }
