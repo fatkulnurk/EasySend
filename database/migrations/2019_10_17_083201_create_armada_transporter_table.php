@@ -23,6 +23,7 @@ class CreateArmadaTransporterTable extends Migration
             $table->integer('jenis');
             $table->integer('kapasitas_volume');
             $table->integer('kapasitas_berat');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

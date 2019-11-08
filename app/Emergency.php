@@ -3,9 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Emergency extends Model
 {
+    use SoftDeletes;
     protected $table = 'emergency';
 
     public function suratJalan()

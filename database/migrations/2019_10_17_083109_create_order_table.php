@@ -24,6 +24,7 @@ class CreateOrderTable extends Migration
             $table->unsignedBigInteger('jumlah_truck');
             $table->unsignedBigInteger('harga');
             $table->boolean('valid');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

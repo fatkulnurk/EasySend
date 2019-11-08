@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use App\AdminAccount;
 
 class AkunAdminController extends Controller
 {

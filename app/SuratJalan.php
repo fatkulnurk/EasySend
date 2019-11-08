@@ -3,9 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class SuratJalan extends Model
 {
+    use SoftDeletes;
     protected $table = 'surat_jalan';
 
     public function order()

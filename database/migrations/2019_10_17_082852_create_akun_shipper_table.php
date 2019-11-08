@@ -20,6 +20,7 @@ class CreateAkunShipperTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->unsignedTinyInteger('role_id');
+            $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();
         });

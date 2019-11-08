@@ -19,6 +19,7 @@ class CreateTransporterTable extends Migration
             $table->string('alamat_kantor');
             $table->string('kontak_1');
             $table->string('kontak_2');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

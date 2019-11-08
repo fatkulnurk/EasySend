@@ -68,6 +68,7 @@ class CreateSuratJalanTable extends Migration
             $table->string('lat_9')->nullable();
             $table->timestamp('sampai_garasi')->nullable();
 
+            $table->softDeletes();
             $table->timestamps();
         });
     }

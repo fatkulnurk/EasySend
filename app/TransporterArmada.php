@@ -3,9 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class TransporterArmada extends Model
 {
+    use SoftDeletes;
     protected $table = 'armada_transporter';
 
     public function driver()

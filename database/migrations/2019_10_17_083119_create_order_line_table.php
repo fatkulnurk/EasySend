@@ -19,6 +19,7 @@ class CreateOrderLineTable extends Migration
             $table->unsignedBigInteger('akun_transporter_id');
             $table->unsignedBigInteger('transporter_id');
             $table->unsignedBigInteger('kuantitas');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

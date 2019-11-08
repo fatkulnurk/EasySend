@@ -20,6 +20,7 @@ class CreateEmergencyTable extends Migration
             $table->string('lon');
             $table->string('lat');
             $table->boolean('ditanggapi')->default(false);
+            $table->softDeletes();
             $table->timestamps();
         });
     }
