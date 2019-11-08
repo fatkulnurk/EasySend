@@ -14,7 +14,7 @@ class CreateAkunRoleTable extends Migration
     public function up()
     {
         Schema::create('akun_role', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->unsignedTinyInteger('id', true);
             $table->string('nama');
             $table->softDeletes();
             $table->timestamps();

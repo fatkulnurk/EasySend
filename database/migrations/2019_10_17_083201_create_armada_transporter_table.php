@@ -14,15 +14,14 @@ class CreateArmadaTransporterTable extends Migration
     public function up()
     {
         Schema::create('armada_transporter', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->unsignedBigInteger('id', true);
             $table->unsignedBigInteger('transporter_id');
             $table->unsignedBigInteger('id_armada');
             $table->unsignedBigInteger('transporter_akun_id');
             $table->string('plat_nomor');
             $table->string('model');
-            $table->integer('jenis');
-            $table->integer('kapasitas_volume');
-            $table->integer('kapasitas_berat');
+            $table->unsignedTinyInteger('jenis_truck');
+            $table->unsignedInteger('kapasitas_berat');
             $table->softDeletes();
             $table->timestamps();
         });

@@ -14,7 +14,7 @@ class CreateShipperTable extends Migration
     public function up()
     {
         Schema::create('shipper', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->unsignedBigInteger('id', true);
             $table->string('nama');
             $table->string('alamat_kantor');
             $table->string('kontak_1');

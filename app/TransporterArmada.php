@@ -19,4 +19,9 @@ class TransporterArmada extends Model
     {
         $this->belongsTo('App\Transporter', 'transporter_id', 'id');
     }
+
+    public function jenis()
+    {
+        $this->belongsTo(TruckMaster::class, 'jenis_truck', 'id');
+    }
 }

@@ -14,11 +14,12 @@ class CreateAkunTransporterTable extends Migration
     public function up()
     {
         Schema::create('akun_transporter', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->unsignedBigInteger('id', true);
             $table->unsignedBigInteger('transporter_id');
             $table->string('nama');
             $table->string('email')->unique();
             $table->string('password');
+            $table->string('telepon');
             $table->unsignedTinyInteger('role_id');
             $table->softDeletes();
             $table->rememberToken();

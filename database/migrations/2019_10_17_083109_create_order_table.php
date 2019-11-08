@@ -14,13 +14,17 @@ class CreateOrderTable extends Migration
     public function up()
     {
         Schema::create('order', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->unsignedBigInteger('id', true);
             $table->unsignedBigInteger('shipper_id');
             $table->unsignedBigInteger('akun_shipper_id');
-            $table->string('barang');
-            $table->integer('berat');
-            $table->integer('volume');
-            $table->unsignedBigInteger('jenis_truck');
+            $table->string('dari_lat');
+            $table->string('dari_lon');
+            $table->text('deskripsi_barang');
+            $table->string('nomor_kontainer');
+            $table->string('nama_kapal')->nullable();
+            $table->dateTime('waktu_kirim');
+            $table->unsignedInteger('estimasi_berat');
+            $table->unsignedTinyInteger('jenis_truck');
             $table->unsignedBigInteger('jumlah_truck');
             $table->unsignedBigInteger('harga');
             $table->boolean('valid');
