@@ -12,4 +12,9 @@ class OrderLine extends Model
     {
         $this->belongsTo('App\Order', 'order_id', 'id');
     }
+
+    public function suratJalan()
+    {
+        $this->hasMany('App\SuratJalan', 'order_line_id', 'id');
+    }
 }

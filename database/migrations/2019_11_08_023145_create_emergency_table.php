@@ -15,6 +15,11 @@ class CreateEmergencyTable extends Migration
     {
         Schema::create('emergency', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('surat_jalan_id');
+            $table->unsignedBigInteger('emergency_id');
+            $table->string('lon');
+            $table->string('lat');
+            $table->boolean('ditanggapi')->default(false);
             $table->timestamps();
         });
     }

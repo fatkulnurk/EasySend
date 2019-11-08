@@ -26,4 +26,9 @@ class ShipperAccount extends Authenticatable
     {
         $this->belongsTo('App\Shipper', 'shipper_id', 'id');
     }
+
+    public function orderan()
+    {
+        $this->hasMany('App\Order', 'shipper_akun_id');
+    }
 }

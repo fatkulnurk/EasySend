@@ -17,4 +17,9 @@ class Shipper extends Model
     {
         $this->hasMany('App\SuratJalan', 'shipper_id', 'id');
     }
+
+    public function pegawai()
+    {
+        $this->hasMany('App\ShipperAccount', 'shipper_id', 'id');
+    }
 }

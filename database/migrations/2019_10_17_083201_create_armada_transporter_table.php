@@ -17,6 +17,7 @@ class CreateArmadaTransporterTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('transporter_id');
             $table->unsignedBigInteger('id_armada');
+            $table->unsignedBigInteger('transporter_akun_id');
             $table->string('plat_nomor');
             $table->string('model');
             $table->integer('jenis');

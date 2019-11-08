@@ -21,4 +21,24 @@ class TransporterAccount extends Authenticatable
     protected $casts = [
 
     ];
+
+    public function infoPerusahaan()
+    {
+        $this->belongsTo('App\Transporter', 'transporter_id', 'id');
+    }
+
+    public function truck()
+    {
+        $this->hasOne('App\TransporterArmada', 'transporter_akun_id', 'id');
+    }
+
+    public function orderLine()
+    {
+        $this->hasMany('App\OderLine', 'transporter_akun_id', 'id');
+    }
+
+    public function role()
+    {
+        $this->hasOne('App\Role', 'role_id', 'id');
+    }
 }
