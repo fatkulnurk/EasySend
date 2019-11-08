@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTransporterTable extends Migration
+class CreateTruckMasterTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,9 @@ class CreateTransporterTable extends Migration
      */
     public function up()
     {
-        Schema::create('transporter', function (Blueprint $table) {
-            $table->unsignedBigInteger('id', true);
+        Schema::create('truck_master', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->string('nama');
-            $table->string('alamat_kantor');
-            $table->string('kontak_1');
-            $table->string('kontak_2');
-            $table->softDeletes();
             $table->timestamps();
         });
     }
@@ -31,6 +27,6 @@ class CreateTransporterTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('transporter');
+        Schema::dropIfExists('truck_master');
     }
 }

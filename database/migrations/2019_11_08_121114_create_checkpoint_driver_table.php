@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateOrderLineTable extends Migration
+class CreateCheckpointDriverTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateOrderLineTable extends Migration
      */
     public function up()
     {
-        Schema::create('order_line', function (Blueprint $table) {
+        Schema::create('checkpoint_driver', function (Blueprint $table) {
             $table->unsignedBigInteger('id', true);
-            $table->unsignedBigInteger('order_id');
-            $table->unsignedBigInteger('akun_transporter_id');
-            $table->unsignedBigInteger('transporter_id');
-            $table->unsignedBigInteger('jumlah_truck');
-            $table->softDeletes();
+            $table->unsignedBigInteger('checkpoint_rute_order_id');
+            $table->string('lat');
+            $table->string('lon');
+            // Perkiraan waktu tiba di checkpoint berikutnya
+            $table->dateTime('eta_checkpoint_berikutnya');
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ class CreateOrderLineTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('order_line');
+        Schema::dropIfExists('checkpoint_driver');
     }
 }
