@@ -16,3 +16,20 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::group([
+    'namespace' => 'Shipper',
+    'as' => 'shipper',
+    'prefix' => 'shipper.'
+], function (){
+    Route::group([
+       'as' => 'order.',
+        'prefix' => 'order'
+    ], function () {
+        Route::get('/', 'OrderController@index');
+        Route::post('/', 'OrderController@store');
+        Route::get('/{id}', 'OrderController@show');
+        Route::post('/{id}', 'OrderController@update');
+        Route::post('/{id}/delete', 'OrderController@delete');
+    });
+});
